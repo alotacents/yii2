@@ -224,7 +224,7 @@ class ActionColumn extends Column
 
             if ($isVisible && isset($this->buttons[$name])) {
                 $url = $this->createUrl($name, $model, $key, $index);
-                return call_user_func($this->buttons[$name], $url, $model, $key);
+                return call_user_func($this->buttons[$name], $url, $model, $key, $index, $this);
             }
 
             return '';

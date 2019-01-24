@@ -401,7 +401,9 @@ class AssetController extends Controller
             $depends = [];
             foreach ($target->depends as $bn) {
                 foreach ($bundles[$bn]->depends as $bundle) {
-                    $depends[$map[$bundle]] = true;
+                    if(isset($map[$bundle])) {
+                        $depends[$map[$bundle]] = true;
+                    }
                 }
             }
             unset($depends[$name]);
